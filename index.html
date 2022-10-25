@@ -11,7 +11,6 @@
             top: 0;
         };
     </style>
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 <body>
     <section>
@@ -82,6 +81,7 @@
         </main>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script>
         (function ($)
         {
@@ -178,7 +178,7 @@
                 {
                     $("html,body").animate({
                         scrollTop: $("#woj").offset().top
-                    }, 500);
+                    }, 500,'swing');
                 })
 
                 $("#2").click(function()
@@ -215,13 +215,6 @@
                         scrollTop: $("#duda").offset().top
                     }, 500);
                 })
-
-                $("#bottom").click(function()
-                {
-                    $("html,body").animate({
-                        scrollTop: $("section").offset().top
-                    }, 500);
-                })
                 
                 $("#blok").css(
                 {
@@ -243,7 +236,67 @@
                         scrollTop: $("section").offset().top
                     }, 500);
                 })
+
+                $("img").mouseover(function()
+                {
+                    $(this).css(
+                    {
+                        border:"5px solid blue"
+                    })
+                })
+                $("img").mouseout(function()
+                {
+                    $(this).css(
+                    {
+                        border:"5px solid black"
+                    })
+                })
                 // $('#arrow').removeProp("border");
+                $("p").css(
+                {
+                    "font-family": "Comic Sans MS",
+                    "letter-spacing": "1px",
+                });
+                $("h1").css({
+                    "font-family": "Stencil Std, fantasy",
+                });
+                
+                $("h3").css(
+                {
+                    "text-align":"center",
+                    "font-family": "Monaco",
+                })
+
+                $("h1").mouseover(function ()
+                {
+                    $(this).css(
+                    {
+                        color:"darkblue",
+                    })
+                })
+
+                $("h1").mouseout(function ()
+                {
+                    $(this).css(
+                    {
+                        color:"black",
+                    })
+                })          
+                $("h1").last().mouseover(function ()
+                {
+                    $("h1").last().animate(
+                    {
+                        "fontSize":"50px",
+                    },100, "easeInSine")
+                })
+                $("h1").last().mouseout(function ()
+                {
+                    $("h1").last().animate(
+                    {
+                        "fontSize":"40px",
+                    },100, "easeInSine")
+                })
+                
             })
         })(jQuery)
     </script>
